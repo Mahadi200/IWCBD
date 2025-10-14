@@ -1,49 +1,42 @@
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { Users, Calendar, MapPin, Clock, Trophy } from 'lucide-react';
 
 const TimelineSection = () => {
   const timelineEvents = [
     {
-      date: 'Jan 15, 2026',
+      date: 'Oct 15, 2025',
       title: 'Registration Opens',
-      description: 'Early bird registration begins for all participants',
+      description: 'Official opening of registration for the Innovation World Cup Bangladesh 2026 National Round.',
       icon: Users,
-      status: 'upcoming',
+      status: 'current',
     },
     {
-      date: 'Jan 26-30, 2026',
-      title: 'International Round',
-      description: 'Global competition round featuring international participants',
-      icon: MapPin,
-      status: 'upcoming',
-    },
-    {
-      date: 'Feb 15, 2026',
-      title: 'Registration Deadline',
-      description: 'Final deadline for team and individual registrations',
+      date: 'Oct 22, 2025',
+      title: 'Project Proposal Submission Deadline',
+      description: 'Last date to submit your project proposals through the official Google Form.',
       icon: Calendar,
       status: 'upcoming',
     },
     {
-      date: 'Feb 20, 2026',
-      title: 'Project Submission',
-      description: 'Submit your innovative project proposals',
+      date: 'Oct 25, 2025',
+      title: 'National Round Selection Announcement',
+      description: 'Selected teams for the National Round will be announced by Dreams of Bangladesh.',
+      icon: MapPin,
+      status: 'upcoming',
+    },
+    {
+      date: 'Oct 30, 2025',
+      title: 'Winners & Top 30 Teams Declaration',
+      description: 'National winners and the Top 30 teams selected for the International Round in Indonesia will be declared.',
+      icon: Trophy,
+      status: 'upcoming',
+    },
+    {
+      date: 'Jan 30, 2026',
+      title: 'International Round (Bandung, Indonesia)',
+      description: 'The final global stage of the Innovation World Cup 2026, hosted by MIICA in Bandung, Indonesia.',
       icon: Clock,
       status: 'upcoming',
-    },
-    {
-      date: 'Mar 1, 2026',
-      title: 'Initial Screening',
-      description: 'Expert panel reviews and selects finalists',
-      icon: Users,
-      status: 'upcoming',
-    },
-    {
-      date: 'Mar 15-17, 2026',
-      title: 'Final Competition',
-      description: 'Three days of intense competition and networking',
-      icon: MapPin,
-      status: 'current',
     },
   ];
 

@@ -11,48 +11,79 @@ import {
 } from 'lucide-react';
 
 const Competition = () => {
-  const categories = [
-    {
-      icon: Lightbulb,
-      title: 'Technology & AI',
-      description: 'Artificial intelligence, machine learning, and technological innovations',
-      prize: 'International Medals',
-      participants: 'Open',
-    },
-    {
-      icon: Target,
-      title: 'Environmental & Life Sciences',
-      description: 'Environmental solutions, life sciences, and sustainability innovations',
-      prize: 'International Medals',
-      participants: 'Open',
-    },
-    {
-      icon: Shield,
-      title: 'SDG & Social Impact',
-      description: 'Solutions addressing UN Sustainable Development Goals and social impact',
-      prize: 'International Medals',
-      participants: 'Open',
-    },
-    {
-      icon: Star,
-      title: 'Social Sciences',
-      description: 'Innovations in social sciences, education, and human development',
-      prize: 'International Medals',
-      participants: 'Open',
-    },
+  const educationLevels = [
     {
       icon: Users,
       title: 'Preschool',
-      description: 'Innovative projects and solutions for early childhood development',
-      prize: 'International Medals',
-      participants: 'Open',
+      description: 'Early childhood innovators and creative young minds',
+      age: '3-5 years',
+      color: 'from-pink-500 to-rose-500',
+    },
+    {
+      icon: Target,
+      title: 'School (Class 1–5)',
+      description: 'Elementary school students exploring fundamental concepts',
+      age: '6-10 years',
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: Star,
+      title: 'High School (Class 6–10)',
+      description: 'Secondary school innovators developing advanced solutions',
+      age: '11-16 years',
+      color: 'from-green-500 to-emerald-500',
     },
     {
       icon: Award,
-      title: 'Teachers & Professionals',
-      description: 'Educational innovations and professional development solutions',
-      prize: 'International Medals',
-      participants: 'Open',
+      title: 'College (Class 11–12)',
+      description: 'Pre-university students with specialized knowledge',
+      age: '17-18 years',
+      color: 'from-purple-500 to-violet-500',
+    },
+    {
+      icon: Trophy,
+      title: 'University (Undergraduate / Graduate)',
+      description: 'Higher education innovators and research pioneers',
+      age: '18+ years',
+      color: 'from-orange-500 to-red-500',
+    },
+  ];
+
+  const projectCategories = [
+    {
+      icon: Shield,
+      title: 'Environmental Sciences',
+      description: 'Climate solutions, sustainability, and environmental protection innovations',
+      iconColor: 'text-green-400',
+      bgColor: 'from-green-500/20 to-emerald-500/20',
+    },
+    {
+      icon: Lightbulb,
+      title: 'Life Sciences',
+      description: 'Biotechnology, healthcare, and biological research innovations',
+      iconColor: 'text-blue-400',
+      bgColor: 'from-blue-500/20 to-cyan-500/20',
+    },
+    {
+      icon: Star,
+      title: 'SDG',
+      description: 'Solutions addressing UN Sustainable Development Goals for global impact',
+      iconColor: 'text-yellow-400',
+      bgColor: 'from-yellow-500/20 to-orange-500/20',
+    },
+    {
+      icon: Target,
+      title: 'Technology & AI',
+      description: 'Artificial intelligence, machine learning, and technological breakthroughs',
+      iconColor: 'text-purple-400',
+      bgColor: 'from-purple-500/20 to-violet-500/20',
+    },
+    {
+      icon: Users,
+      title: 'Social Sciences',
+      description: 'Human development, education, and social innovation solutions',
+      iconColor: 'text-pink-400',
+      bgColor: 'from-pink-500/20 to-rose-500/20',
     },
   ];
 
@@ -95,16 +126,16 @@ const Competition = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-              Competition <span className="text-gradient-neon">Details</span>
+              Competition <span className="text-gradient-neon">Framework</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Compete in Bangladesh's most prestigious innovation competition across multiple categories
+              Choose your education level and project category to compete in Bangladesh's premier innovation platform
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Education Levels Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -115,49 +146,95 @@ const Competition = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              Competition Categories
+              <span className="text-gradient-neon">Education Levels</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose your category and showcase your innovation in the most relevant field
+              From preschoolers to university graduates - innovation has no age limit
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {categories.map((category, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {educationLevels.map((level, index) => (
               <motion.div
-                key={category.title}
-                className="card-glass p-8"
+                key={level.title}
+                className="relative group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-primary-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <category.icon className="w-8 h-8 text-primary-400" />
+                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl"
+                     style={{ background: `linear-gradient(135deg, ${level.color.replace('from-', '').replace('to-', '')})` }}>
+                </div>
+                <div className="relative card-glass p-8 h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <level.icon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white mb-3">
+                      {level.title}
+                    </h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {level.description}
+                    </p>
+                    <div className="mt-auto">
+                      <span className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/20 text-sm font-medium text-primary-400">
+                        Age: {level.age}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex-1">
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Categories Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-purple-500/5 to-blue-500/10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              Project <span className="text-gradient-neon">Categories</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose your field of innovation and make a lasting impact
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                className="relative group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl"
+                     style={{ background: `linear-gradient(135deg, ${category.bgColor.replace('from-', '').replace('to-', '')})` }}>
+                </div>
+                <div className="relative card-glass p-8 h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-20 h-20 bg-gradient-to-br ${category.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <category.icon className={`w-10 h-10 ${category.iconColor}`} />
+                    </div>
                     <h3 className="text-2xl font-semibold text-white mb-3">
                       {category.title}
                     </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       {category.description}
                     </p>
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <div className="text-sm text-gray-400">Prize Money</div>
-                        <div className="text-lg font-bold text-gradient-neon">
-                          {category.prize}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-gray-400">Participants</div>
-                        <div className="text-lg font-bold text-primary-400">
-                          {category.participants}
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -282,14 +359,17 @@ const Competition = () => {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Join hundreds of innovators and showcase your groundbreaking solutions
             </p>
-            <motion.button
-              className="btn-primary px-10 py-5 text-xl font-bold"
+            <motion.a
+              href="https://forms.gle/VaJpdMHoPgZXqmbB8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-10 py-5 text-xl font-bold inline-flex items-center"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Trophy className="w-6 h-6 inline mr-2" />
+              <Trophy className="w-6 h-6 mr-2" />
               Register Now
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>

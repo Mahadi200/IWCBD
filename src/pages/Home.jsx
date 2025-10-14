@@ -24,8 +24,8 @@ const Home = () => {
       <StatsSection />
       <FeaturesSection />
       <TimelineSection />
-      <PartnersSection />
-      <CTASection />
+      {/* <PartnersSection /> */}
+      {/* <CTASection /> */}
     </div>
   );
 };

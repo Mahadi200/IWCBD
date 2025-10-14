@@ -1,355 +1,326 @@
 import { motion } from 'framer-motion';
-import { 
-  Trophy, 
-  Users, 
-  Globe, 
-  Lightbulb, 
+import {
+  Trophy,
+  Users,
+  Globe,
+  Lightbulb,
   Target,
   Award,
   Sparkles,
-  Heart
+  Heart,
+  Megaphone,
+  BookOpen,
+  BadgeCheck,
 } from 'lucide-react';
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay },
+  viewport: { once: true },
+});
 
 const About = () => {
   const objectives = [
     {
       icon: Lightbulb,
-      title: 'Build National Innovation Ecosystem',
-      description: 'Align with global standards and create a thriving innovation environment',
+      title: 'Create a Global Stage',
+      description:
+        'Provide students and innovators a platform to present their groundbreaking ideas.',
     },
     {
       icon: Globe,
-      title: 'Promote Creativity & Technology',
-      description: 'Foster social innovation and technological advancement',
+      title: 'Foster International Collaboration',
+      description:
+        'Connect schools, universities, and research institutions across borders.',
     },
     {
-      icon: Users,
-      title: 'Connect Educational Institutions',
-      description: 'Bridge schools, universities, and startups through one platform',
+      icon: Award,
+      title: 'Recognise Excellence',
+      description:
+        'Celebrate innovation, invention, and creativity with global recognition.',
     },
     {
       icon: Target,
-      title: 'Recognize Best Innovations',
-      description: 'Send top Bangladeshi innovations to the global stage',
+      title: 'Build an Innovation Ecosystem',
+      description:
+        'Transform ideas into real-world impact through a strong global network.',
     },
   ];
 
-  const values = [
-    {
-      title: 'Excellence',
-      description: 'We strive for the highest standards in everything we do',
-      color: 'text-yellow-400',
-    },
-    {
-      title: 'Innovation',
-      description: 'We embrace creativity and forward-thinking solutions',
-      color: 'text-blue-400',
-    },
-    {
-      title: 'Collaboration',
-      description: 'We believe in the power of teamwork and collective intelligence',
-      color: 'text-green-400',
-    },
-    {
-      title: 'Integrity',
-      description: 'We maintain the highest ethical standards in all our activities',
-      color: 'text-purple-400',
-    },
+  const judging = [
+    { label: 'Urgency', value: 30 },
+    { label: 'Presentation', value: 30 },
+    { label: 'Visibility', value: 20 },
+    { label: 'Relevance', value: 20 },
+  ];
+
+  const awards = [
+    { title: 'PLATINUM', desc: 'Overall Best (Top 10) Innovation World Cup 2026' },
+    { title: 'MEDALS', desc: 'Gold | Silver | Bronze' },
+    { title: 'Country Award', desc: 'Country with the most number of teams' },
+    { title: 'Institution Award', desc: 'Institution/School with the most teams' },
+    { title: 'Commercialisation', desc: 'Best Project with Commercialisation Value' },
+    { title: 'Best SDG Video', desc: 'Best SDG Video Presentation' },
+    { title: 'Best Poster', desc: 'Best Poster' },
   ];
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0B0F14] via-[#1a0f2a] to-[#2a0f3b]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div {...fadeUp()}>
             <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-              About <span className="text-gradient-neon">IWC Bangladesh</span>
+              About <span className="text-[var(--iwc-primary,#8f1f94)]">IWC Bangladesh</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              The Innovation World Cup Bangladesh (IWC BD) is the official national round 
-              of the global Innovation World Cup 2026, organized by Dreams of Bangladesh 
-              under exclusive partnership with MIICA, Malaysia.
+              The Innovation World Cup (IWC) 2026 is a premier international platform that brings
+              together young innovators, researchers, educators, and entrepreneurs from around the globe.
+              Hosted with MIICA (Malaysia) and in collaboration with UNIKOM (Indonesia), IWC Bangladesh is
+              the official national round organised by <b>Dreams of Bangladesh</b>.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Introduction */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              Purpose & Objectives
+          <motion.div className="mb-10" {...fadeUp()}>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+              Introduction
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Building a bridge between Bangladesh and the world innovation ecosystem. 
-              Students, teachers, entrepreneurs, and researchers can present their innovative 
-              ideas, research, and inventions on an international platform.
-            </p>
+            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <p>
+                Innovation has become the key driver of progress in the 21st century. As the world
+                faces complex challenges in sustainability, technology, health, education, and social
+                development, there is an urgent need to empower the next generation of innovators.
+              </p>
+              <p>
+                <b>IWC 2026</b> provides a stage where groundbreaking ideas compete, cross-cultural
+                collaborations are formed, and solutions for a better future are showcased.
+                Simultaneously, the <b>International Invention, Innovation and Creativity Competition (I³C) 2026</b>
+                highlights creativity and problem-solving among school and university students.
+                By co-hosting both competitions, participants gain exposure to two prestigious awards in one
+                historic event, further elevating their achievements and recognition.
+              </p>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {objectives.map((point, index) => (
-              <motion.div
-                key={point.title}
-                className="card-glass p-8 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.05 }}
-              >
-                <point.icon className="w-12 h-12 text-primary-500 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {point.title}
-                </h3>
-                <p className="text-gray-300">
-                  {point.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Objectives & Theme */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-purple-500/5 to-blue-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              Our Values
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The principles that guide our commitment to fostering innovation and excellence
-            </p>
-          </motion.div>
+          <motion.h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-12 text-center" {...fadeUp()}>
+            Objectives & Theme
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                className="card-glass p-8"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <h3 className={`text-2xl font-bold ${value.color} mb-4`}>
-                  {value.title}
-                </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Theme Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-                Theme
-              </h2>
-              <div className="space-y-6 text-gray-300 leading-relaxed">
-                <h3 className="text-2xl font-semibold text-gradient-neon mb-4">
-                  "Innovate Beyond Borders: Shaping the Future Together."
-                </h3>
-                <p className="text-lg">
-                  A global call to collaborate beyond boundaries and use innovation 
-                  for sustainable progress. This theme encourages participants to 
-                  think globally while acting locally, creating solutions that 
-                  transcend geographical and cultural barriers.
-                </p>
-                <p className="text-lg">
-                  We believe that innovation knows no boundaries, and through this competition, 
-                  we aim to prove that Bangladesh has the talent, creativity, and determination 
-                  to lead the next wave of technological advancement.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Objectives */}
+            <motion.div {...fadeUp(0.1)} className="card-glass p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                <Megaphone className="w-6 h-6 text-[var(--iwc-primary,#8f1f94)]" />
+                Objectives
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {objectives.map((o, idx) => (
+                  <motion.div
+                    key={o.title}
+                    className="p-5 rounded-xl bg-white/5 border border-white/10"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    viewport={{ once: true }}
+                  >
+                    <o.icon className="w-7 h-7 text-[var(--iwc-primary,#8f1f94)] mb-3" />
+                    <div className="text-white font-semibold">{o.title}</div>
+                    <div className="text-gray-300 text-sm mt-1">{o.description}</div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
 
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            {/* Theme */}
+            <motion.div {...fadeUp(0.2)} className="card-glass p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6">Theme</h3>
+              <p className="text-xl font-semibold text-[var(--iwc-primary,#8f1f94)] mb-4">
+                “Innovate Beyond Borders: Shaping the Future Together”
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                This theme reflects the spirit of uniting minds across nations to develop
+                solutions that transcend geographical and cultural boundaries.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* International Collaborators */}
+      <section className="py-20 relative">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeUp()} className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              International Collaborators
+            </h2>
+            <p className="text-gray-300">
+              Multi-nation collaboration across Asia, the Middle East and Europe.
+            </p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp(0.1)}
+            className="card-glass p-6 flex flex-wrap items-center justify-center gap-3 text-2xl"
+          >
+            {/* Flag emoji row as placeholders; replace with logos/flags as needed */}
+            <span>🇧🇩</span><span>🇲🇾</span><span>🇮🇩</span><span>🇵🇭</span>
+            <span>🇮🇳</span><span>🇻🇳</span><span>🇹🇷</span><span>🇮🇷</span>
+            <span>🇰🇿</span><span>🇦🇪</span><span>🇹🇼</span><span>🇳🇵</span>
+            <span>🇲🇰</span><span>🇷🇴</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mode of Presentation + Judging */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--iwc-primary,#8f1f94)]/10 via-transparent to-blue-500/10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-10 text-center" {...fadeUp()}>
+            Mode of Presentation
+          </motion.h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <motion.ul
+              {...fadeUp(0.1)}
+              className="card-glass p-8 space-y-4 text-gray-300 leading-relaxed"
             >
-              <div className="card-glass p-8">
-                <h3 className="text-xl font-semibold text-white mb-6">Who Can Participate</h3>
-                <div className="space-y-4 text-gray-300">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span>School Students (Primary & Secondary)</span>
+              <li>Each participating team will be provided with a table to showcase their project.</li>
+              <li>Teams must bring a stand banner (roll-up poster) with title, abstract, and key visuals.</li>
+              <li>Prototypes, models, or supporting materials may be displayed on the table.</li>
+              <li>Judging will take place at the team’s booth where participants present directly to the jury panel.</li>
+            </motion.ul>
+
+            <motion.div {...fadeUp(0.2)} className="card-glass p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                <BadgeCheck className="w-6 h-6 text-[var(--iwc-primary,#8f1f94)]" />
+                Judging Criteria
+              </h3>
+              <div className="space-y-5">
+                {judging.map((j, i) => (
+                  <div key={j.label}>
+                    <div className="flex justify-between text-sm text-gray-300 mb-1">
+                      <span>{j.label}</span>
+                      <span>{j.value}%</span>
+                    </div>
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-[var(--iwc-primary,#8f1f94)]"
+                        style={{ width: `${j.value}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span>College & University Students (Diploma, Bachelor's, Master's, PhD)</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span>Teachers, Professionals & Entrepreneurs</span>
-                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates & Medal + Trophy & Cash */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <motion.div {...fadeUp(0.1)} className="card-glass p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                <BookOpen className="w-6 h-6 text-[var(--iwc-primary,#8f1f94)]" />
+                Certificates & Medal
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-white font-semibold mb-2">Certificate & Medal of Award</div>
+                  <p className="text-gray-300 text-sm">
+                    For participants who achieve outstanding results or significant
+                    accomplishments during the competition.
+                  </p>
                 </div>
-                <div className="mt-6 p-4 bg-primary-500/10 rounded-lg">
-                  <p className="text-sm text-primary-400">
-                    Teams may have up to 6 members + 1 supervisor/mentor
+                <div className="p-5 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-white font-semibold mb-2">
+                    Certificate & Medal of Appreciation
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    To honour the dedication and guidance provided by teachers or project supervisors.
                   </p>
                 </div>
               </div>
             </motion.div>
+
+            <motion.div {...fadeUp(0.2)} className="card-glass p-8">
+              <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                <Trophy className="w-6 h-6 text-[var(--iwc-primary,#8f1f94)]" />
+                Trophy & Cash Award
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                IWC 2026 in conjunction with I³C 2026 will be a milestone global event. By offering
+                students and innovators the opportunity to earn <b>two international awards</b> in a single
+                event, alongside the prestigious <b>10 Best Innovation Awards</b> with trophies and cash prizes,
+                it creates an unforgettable experience while driving real-world impact.
+              </p>
+              <p className="text-gray-300 leading-relaxed mt-4">
+                This event not only honours outstanding achievements but also inspires a new wave of
+                collaboration and innovation — proving that the future truly belongs to those who dare to create.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Format Section */}
+      {/* Awards */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-purple-500/5 to-blue-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0B0F14] via-[#1a0f2a] to-[#2a0f3b]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <motion.div {...fadeUp()} className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              National Round Format
+              Awards
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The Bangladesh National Round will be held entirely online with a focus on proposal submission
+            <p className="text-gray-300">
+              Global recognition across multiple categories and special honours.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              className="card-glass p-8 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl">📝</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Online Proposal Submission
-              </h3>
-              <p className="text-gray-300">
-                Submit a comprehensive PDF proposal following the official structure. 
-                No physical exhibition required.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="card-glass p-8 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl">🌍</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                International Qualification
-              </h3>
-              <p className="text-gray-300">
-                Shortlisted teams will represent Bangladesh in the International Round 
-                in Bandung, Indonesia (28–31 January 2026).
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="card-glass p-8 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl">📋</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Structured Format
-              </h3>
-              <p className="text-gray-300">
-                800–1200 words, max 6 pages (A4), PDF format. 
-                Prototype not mandatory (video or demo link optional).
-              </p>
-            </motion.div>
+            {awards.map((a, i) => (
+              <motion.div
+                key={a.title + i}
+                className="card-glass p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-3">
+                  <Sparkles className="w-5 h-5 text-[var(--iwc-primary,#8f1f94)]" />
+                  <h4 className="text-white font-semibold">{a.title}</h4>
+                </div>
+                <p className="text-gray-300 mt-2 text-sm">{a.desc}</p>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Team Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...fadeUp(0.2)}
+            className="mt-14 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Join Our Community
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-              Be part of a growing community of innovators, entrepreneurs, and technology 
-              leaders who are shaping the future of Bangladesh.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.button
-                className="btn-primary px-8 py-4 text-lg font-semibold"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Trophy className="w-5 h-5 inline mr-2" />
-                Register Now
-              </motion.button>
-              <motion.button
-                className="btn-secondary px-8 py-4 text-lg font-semibold"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Heart className="w-5 h-5 inline mr-2" />
-                Become a Partner
-              </motion.button>
-            </div>
+            <a 
+              href="https://forms.gle/VaJpdMHoPgZXqmbB8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 rounded-lg bg-[var(--iwc-primary,#8f1f94)] text-white font-semibold hover:opacity-90 transition"
+            >
+              Register Now
+            </a>
           </motion.div>
         </div>
       </section>

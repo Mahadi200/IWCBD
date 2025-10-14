@@ -7,7 +7,6 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Competition from './pages/Competition';
-import Schedule from './pages/Schedule';
 import Register from './pages/Register';
 import Contact from './pages/Contact';
 import LoadingScreen from './components/ui/LoadingScreen';
@@ -37,7 +36,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/competition" element={<Competition />} />
-            <Route path="/schedule" element={<Schedule />} />
             <Route path="/register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

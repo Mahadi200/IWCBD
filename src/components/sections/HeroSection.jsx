@@ -157,23 +157,28 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <motion.button
+            <motion.a
+              href="https://forms.gle/VaJpdMHoPgZXqmbB8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary px-8 py-4 text-lg font-semibold flex items-center space-x-2"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <Users className="w-5 h-5" />
               <span>Register Your Team</span>
-            </motion.button>
+            </motion.a>
             
-            <motion.button
+            <motion.a
+              href="/IWC_Bangladesh_2026_Process_Flow.pdf"
+              download="IWC_Bangladesh_2026_Process_Flow.pdf"
               className="btn-secondary px-8 py-4 text-lg font-semibold flex items-center space-x-2"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <Calendar className="w-5 h-5" />
               <span>Download Guidelines</span>
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Event Info Cards */}
@@ -186,8 +191,8 @@ const HeroSection = () => {
             {[
               {
                 icon: Calendar,
-                title: "Event Date",
-                subtitle: "January 26-30, 2026",
+                title: "National Round",
+                subtitle: "30 October, 2025",
               },
               {
                 icon: MapPin,
@@ -197,7 +202,7 @@ const HeroSection = () => {
               {
                 icon: Users,
                 title: "Participants",
-                subtitle: "500+ Innovators",
+                subtitle: "1000+ Innovators",
               },
             ].map((item, index) => (
               <motion.div

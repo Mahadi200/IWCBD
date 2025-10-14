@@ -286,8 +286,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
+{/* 
+      FAQ Section
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-purple-500/5 to-blue-500/10" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -343,7 +343,7 @@ const Contact = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
