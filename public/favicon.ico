@@ -1,0 +1,10 @@
+# Favicon should be created from /Images/logo.png
+# 
+# To create favicon.ico from your logo:
+# 1. Use an online favicon generator (e.g., favicon.io, realfavicongenerator.net)
+# 2. Upload /Images/logo.png
+# 3. Download the generated favicon.ico file
+# 4. Replace this file with the downloaded favicon.ico
+# 
+# Recommended sizes: 16x16, 32x32, 48x48 pixels
+# The logo.png will be used as the source for all favicon formats
