@@ -11,19 +11,13 @@ const TimelineSection = () => {
       status: 'current',
     },
     {
-      date: 'Oct 22, 2025',
+      date: 'Oct 25, 2025',
       title: 'Project Proposal Submission Deadline',
       description: 'Last date to submit your project proposals through the official Google Form.',
       icon: Calendar,
       status: 'upcoming',
     },
-    {
-      date: 'Oct 25, 2025',
-      title: 'National Round Selection Announcement',
-      description: 'Selected teams for the National Round will be announced by Dreams of Bangladesh.',
-      icon: MapPin,
-      status: 'upcoming',
-    },
+  
     {
       date: 'Oct 30, 2025',
       title: 'Winners & Top 30 Teams Declaration',
